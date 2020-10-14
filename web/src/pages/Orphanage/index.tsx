@@ -14,6 +14,7 @@ import {
   OpenOnWeekends,
   ContactButton,
   Images,
+  PhotoButton,
 } from './styles';
 import SideBar from '../../components/SideBar';
 import happyMapIcon from '../../utils/mapIcon';
@@ -30,42 +31,42 @@ const Orphanage: React.FC = () => {
           />
 
           <Images>
-            <button type="button">
+            <PhotoButton active type="button">
               <img
                 src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg"
                 alt="Lar das meninas"
               />
-            </button>
-            <button type="button">
+            </PhotoButton>
+            <PhotoButton type="button">
               <img
                 src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg"
                 alt="Lar das meninas"
               />
-            </button>
-            <button type="button">
+            </PhotoButton>
+            <PhotoButton type="button">
               <img
                 src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg"
                 alt="Lar das meninas"
               />
-            </button>
-            <button type="button">
+            </PhotoButton>
+            <PhotoButton type="button">
               <img
                 src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg"
                 alt="Lar das meninas"
               />
-            </button>
-            <button type="button">
+            </PhotoButton>
+            <PhotoButton type="button">
               <img
                 src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg"
                 alt="Lar das meninas"
               />
-            </button>
-            <button type="button">
+            </PhotoButton>
+            <PhotoButton type="button">
               <img
                 src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg"
                 alt="Lar das meninas"
               />
-            </button>
+            </PhotoButton>
           </Images>
 
           <OrphanageDetailsContent>

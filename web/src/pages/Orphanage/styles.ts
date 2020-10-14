@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface PhotoButtonProps {
+  active?: boolean;
+}
+
 export const Container = styled.div`
   display: flex;
   min-height: 100vh;
@@ -25,29 +29,29 @@ export const OrphanageDetails = styled.div`
   }
 `;
 
+export const PhotoButton = styled.button<PhotoButtonProps>`
+  border: 0;
+  height: 88px;
+  background: none;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  outline: none;
+
+  opacity: ${props => (props.active ? 1 : 0.6)};
+  img {
+    width: 100%;
+    height: 88px;
+    object-fit: cover;
+  }
+`;
+
 export const Images = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   column-gap: 16px;
 
   margin: 16px 40px 0;
-
-  button {
-    border: 0;
-    height: 88px;
-    background: none;
-    cursor: pointer;
-    border-radius: 20px;
-    overflow: hidden;
-    outline: none;
-
-    opacity: 0.6;
-    img {
-      width: 100%;
-      height: 88px;
-      object-fit: cover;
-    }
-  }
 `;
 
 export const OrphanageDetailsContent = styled.div`
