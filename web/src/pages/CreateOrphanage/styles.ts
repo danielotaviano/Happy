@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface ButtonSelectProps {
+  selected?: boolean;
+}
+
 export const Container = styled.div`
   display: flex;
 `;
@@ -38,6 +42,12 @@ export const CreateOrphanageForm = styled.form`
       margin-bottom: 40px;
       padding-bottom: 24px;
     }
+  }
+
+  .leaflet-container {
+    margin-bottom: 40px;
+    border: 1px solid #d3e2e5;
+    border-radius: 20px;
   }
 `;
 
@@ -81,33 +91,57 @@ export const InputBlock = styled.div`
   }
 `;
 
-export const NewImage = styled.button`
-  width: 100%;
-  height: 64px;
+export const ImagesContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+
+  img {
+    width: 100%;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+`;
+
+export const NewImage = styled.label`
+  height: 96px;
   background: #f5f8fa;
   border: 1px dashed #96d2f0;
   border-radius: 20px;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const ButtonSelect = styled.div`
+export const InputFile = styled.input`
+  display: none;
+`;
+
+export const ButtonsSelect = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
   button {
-    height: 64px;
-    background: #f5f8fa;
-    border: 1px solid #d3e2e5;
-    color: #5c8599;
-    cursor: pointer;
-    &:first-child {
-      border-radius: 20px 0px 0px 20px;
-    }
-    &:last-child {
-      border-radius: 0 20px 20px 0;
-      border-left: 0;
-    }
   }
+`;
+
+export const ButtonSelect = styled.button<ButtonSelectProps>`
+  height: 64px;
+  background: ${({ selected }) => (selected ? '#edfff6' : '#f5f8fa')};
+  border: 1px solid ${({ selected }) => (selected ? '#a1e9c5' : '#d3e2e5')};
+  color: ${({ selected }) => (selected ? '#37c77f' : '#5c8599')};
+  cursor: pointer;
+  &:first-child {
+    border-radius: 20px 0px 0px 20px;
+  }
+  &:last-child {
+    border-radius: 0 20px 20px 0;
+    border-left: 0;
+  }
+  transition: 0.2s;
 `;
 
 export const ConfirmButton = styled.button`
@@ -136,9 +170,3 @@ export const ConfirmButton = styled.button`
     background: #36cf82;
   }
 `;
-
-// form.create-orphanage-form .input-block .button-select button.active {
-//   background: #EDFFF6;
-//   border: 1px solid #A1E9C5;
-//   color: #37C77F;
-// }

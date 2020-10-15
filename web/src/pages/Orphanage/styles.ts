@@ -4,6 +4,10 @@ interface PhotoButtonProps {
   active?: boolean;
 }
 
+interface OpenOnWeekendsProps {
+  open?: boolean;
+}
+
 export const Container = styled.div`
   display: flex;
   min-height: 100vh;
@@ -127,10 +131,13 @@ export const Hour = styled.div`
   color: #5c8599;
 `;
 
-export const OpenOnWeekends = styled.div`
-  background: linear-gradient(154.16deg, #edfff6 7.85%, #ffffff 91.03%);
-  border: 1px solid #a1e9c5;
-  color: #37c77f;
+export const OpenOnWeekends = styled.div<OpenOnWeekendsProps>`
+  background: ${({ open }) =>
+    open
+      ? 'linear-gradient(154.16deg, "#edfff6" 7.85%, "#ffffff" 91.03%)'
+      : 'linear-gradient(154.16deg, "#fdf0f5 "7.85%, "#ffffff" 91.03%)'};
+  border: 1px solid ${({ open }) => (open ? '#a1e9c5' : '#ffbcd4')};
+  color: ${({ open }) => (open ? '#37c77f' : '#FF669D')};
 `;
 
 export const ContactButton = styled.button`
